@@ -7,9 +7,6 @@ int main() {
 	for (int i = 0; i < 1<<10; i++) {
 		hoge.push_back(i);
 	}
-	for (int i = 0; i < hoge.size(); i++) {
-		std::cout << hoge.at(i) << ' ';
-	}
-	std::cout << '\n';
+	std::cout << hoge << '\n';
 	return 0;
 }

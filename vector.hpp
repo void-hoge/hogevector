@@ -4,6 +4,7 @@
 #include <memory>
 #include <stdexcept>
 #include <iostream>
+#include <string>
 
 namespace voidhoge {
 
@@ -75,7 +76,19 @@ public:
 		}
 		return e[idx];
 	}
+	void dump(std::ostream& os, std::string sep) {
+		for (size_type i = 0; i < size()-1; i++) {
+			os << at(i) << sep;
+		}
+		os << at(size()-1);
+	}
 };
+
+template<typename T>
+std::ostream& operator<<(std::ostream& os, voidhoge::vector<T> v) {
+	v.dump(os, " ");
+	return os;
+}
 
 } // namespace voidhoge
 
